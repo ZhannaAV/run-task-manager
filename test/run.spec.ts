@@ -1,30 +1,7 @@
 import t from 'tap';
 import run from '../src/run';
-import ITask, { ActionType } from '../src/Task';
-import { distinctTargetIdsCount, getQueue, wantedResult } from './data';
+import { getQueue, wantedResult } from './data';
 import ExecutorExt from './ExecutorExt';
-import ITaskExt from './ITaskExt';
-
-// t.test('run() without threads limit', async t => {
-//     const queue = getQueue();
-//     const executor = new ExecutorExt(t.name, queue);
-//     executor.start();
-//     await run(executor, queue);
-//     executor.stop();
-//     const completed = executor.getExecuteData().completed;
-//     const performance = executor.getPerformanceReport();
-//
-//     t.pass('run() executed sucessfully');
-//     t.same(completed, wantedResult,
-//         'all tasks completed in proper order');
-//
-//     t.equal(performance.max, distinctTargetIdsCount,
-//         '`performance.max` should be `' + distinctTargetIdsCount +
-//         '` (equal to number of distinct `targetId`) (' + performance.max + ')');
-//     t.ok(performance.avg > distinctTargetIdsCount - 3.5,
-//         '`performance.avg` should be greater than `' + (distinctTargetIdsCount - 3.5) +
-//         '` (~number of distinct `targetId`) (' + performance.avg + ')');
-// });
 
 t.test('run() with 2 max threads', async t => {
     const queue = getQueue();
@@ -33,7 +10,6 @@ t.test('run() with 2 max threads', async t => {
     await run(executor, queue, 2);
     executor.stop();
     const completed = executor.getExecuteData().completed;
-    console.log("TTT",executor.getExecuteData())
     const performance = executor.getPerformanceReport();
 
     t.pass('run() executed sucessfully');
