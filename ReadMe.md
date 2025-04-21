@@ -1,4 +1,5 @@
 # 🧵 run-task-manager
+
 ![CI](https://github.com/ZhannaAV/run-task-manager/actions/workflows/ci.yml/badge.svg)
 
 **Асинхронный менеджер задач с ограничением по targetId и параллелизму.**  
