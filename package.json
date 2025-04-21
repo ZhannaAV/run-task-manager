@@ -1,5 +1,5 @@
 {
-  "name": "@linkedhelper/hiring",
+  "name": "run-task-manager",
   "version": "1.4.1",
   "description": "Linked Helper hiring test",
   "main": "dist/index.js",
