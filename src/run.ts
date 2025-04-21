@@ -28,7 +28,7 @@ class LinkedList {
             curr = curr.next;
         }
 
-        if (!curr) return;
+        if (!curr) { return; }
 
         if (!prev) {
             this.head = curr.next;
@@ -76,7 +76,7 @@ export default async function run(executor: IExecutor, queue: AsyncIterable<ITas
     async function tryStart() {
         while (activeTasks.size < maxThreads) {
             const task = taskBuffer.dequeue(running);
-            if (!task) break;
+            if (!task) { break; }
 
             running.add(task.targetId);
 
